@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<title>Angular For Each</title>
+	<!-- Cargamos bootstrap -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+	<!-- Cargamos angular -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
+	<!-- Cargamos el javascript de angular -->
+	<script src="app.js"></script>
+</head>
+<body >
+	<div ng-controller="PruebaController">
+	 	<h1>Ejemplo del uso de angular forEach</h1>
+	 	<table class="table table-bordered" style="width:220px;">
+	 		<thead>
+	 			<tr>
+		 			<td>#</td>
+		 			<td>Movie Name</td>
+	 			</tr>
+	 		</thead>
+	 		<tbody>
+	 		 <tr ng-repeat="movie in movies">
+			      <td>{{movie.moviename}}</td>
+			      <td>{{movie.calificacion}}</td>
+		     </tr>
+	 		</tbody>	 		
+	 	</table>
+		
+		<form ng-submit="addMovie();">
+			<input type="text" ng-model="moviename">
+			<input type="text" ng-model="calificacion">			
+			<input type="submit" value="Ingresar"> 
+			
+		</form>
+	</div>
+</body>
+</html>
