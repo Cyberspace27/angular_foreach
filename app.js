@@ -28,11 +28,14 @@ app.controller("PruebaController", function($scope) {
   $scope.addMovie = function (){
     var newMovie = $scope.moviename;
     var oldmovie;
+    var suma = 0 ;
     if(newMovie){
       angular.forEach($scope.movies, function(eachmovie){
+        suma=eachmovie.calificacion+suma;
         if(newMovie.toLowerCase() == eachmovie.moviename.toLowerCase()){
           console.log(eachmovie.moviename.toLowerCase());
           oldmovie= true;
+          console.log(suma);
         }
       });
       if(!oldmovie){
